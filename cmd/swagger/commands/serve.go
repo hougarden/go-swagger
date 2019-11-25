@@ -84,7 +84,7 @@ func (s *ServeCmd) Execute(args []string) error {
 			handler = middleware.Redoc(middleware.RedocOpts{
 				BasePath: basePath,
 				SpecURL:  path.Join(basePath, "swagger.json"),
-				Path:     "docs",
+				Path:     "/",
 			}, handler)
 			visit = fmt.Sprintf("http://%s:%d%s", sh, sp, path.Join(basePath, "docs"))
 		} else if visit != "" || s.Flavor == "swagger" {
